@@ -29,8 +29,10 @@ namespace CatchGame
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
+            this.gameLoop = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timeLabel
@@ -56,6 +58,12 @@ namespace CatchGame
             this.scoreLabel.Text = "scoreLabel";
             this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // gameLoop
+            // 
+            this.gameLoop.Enabled = true;
+            this.gameLoop.Interval = 500;
+            this.gameLoop.Tick += new System.EventHandler(this.gameLoop_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -69,6 +77,9 @@ namespace CatchGame
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.ResumeLayout(false);
 
         }
@@ -77,6 +88,7 @@ namespace CatchGame
 
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Timer gameLoop;
     }
 }
 
