@@ -33,6 +33,8 @@ namespace CatchGame
             this.timeLabel = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
             this.gameLoop = new System.Windows.Forms.Timer(this.components);
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.subtitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timeLabel
@@ -60,9 +62,28 @@ namespace CatchGame
             // 
             // gameLoop
             // 
-            this.gameLoop.Enabled = true;
             this.gameLoop.Interval = 500;
             this.gameLoop.Tick += new System.EventHandler(this.gameLoop_Tick);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Font = new System.Drawing.Font("Determination Mono", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(17, 177);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(571, 41);
+            this.titleLabel.TabIndex = 2;
+            this.titleLabel.Text = "titleLabel";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // subtitleLabel
+            // 
+            this.subtitleLabel.Font = new System.Drawing.Font("Determination Mono", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitleLabel.Location = new System.Drawing.Point(17, 218);
+            this.subtitleLabel.Name = "subtitleLabel";
+            this.subtitleLabel.Size = new System.Drawing.Size(571, 41);
+            this.subtitleLabel.TabIndex = 3;
+            this.subtitleLabel.Text = "label1";
+            this.subtitleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
@@ -70,6 +91,8 @@ namespace CatchGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(600, 600);
+            this.Controls.Add(this.subtitleLabel);
+            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.timeLabel);
             this.DoubleBuffered = true;
@@ -89,6 +112,8 @@ namespace CatchGame
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.Timer gameLoop;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label subtitleLabel;
     }
 }
 
